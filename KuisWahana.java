@@ -16,7 +16,14 @@ public class KuisWahana {
             if (usia < 1 || usia > 80 ) {
                 System.out.println("tidak valid, ulangi");
             }
-            
+            while (usia > 12) {
+                kuotaDewasa--;
+                int ditolak= 0;
+                if (kuotaDewasa == 0) {
+                    System.out.println("Kuota dewasa habis, pengunjung ke-"+n+"ditolak");
+                    ditolak++;
+                }
+            }
             // Harga tiket: usia di bawah 12 tahun Rp 25000, selain itu Rp 40000
             int harga;
             int muda = 0;
@@ -35,6 +42,7 @@ public class KuisWahana {
         double rataUsia = totalUsia / n;
         System.out.println("=== REKAP HARIAN ===");
         System.out.println("jumlah pengunjung muda  :"+ muda);
+        System.out.println("pengunjung ditolak  :"+ditolak);
         System.out.println("Total pendapatan : Rp " + totalPendapatan);
         System.out.println("Rata-rata usia   : " + rataUsia + " tahun");
     }
